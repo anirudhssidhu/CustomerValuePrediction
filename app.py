@@ -7,7 +7,7 @@ import pandas as pd
 app=Flask(__name__)
 
 # loading the model
-regmodel=pickle.load(open("./models/best_model.pkl", "rb"))
+regmodel=pickle.load(open("./models/bestMODEL.pkl", "rb"))
 dropCols = pickle.load(open("./models/dropCol.pkl", "rb"))
 impCols = pickle.load(open("./models/impCol.pkl", "rb"))
 colNames = pickle.load(open("./models/colNames.pkl", "rb"))
