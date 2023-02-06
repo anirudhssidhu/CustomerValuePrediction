@@ -16,7 +16,7 @@ colNames = pickle.load(open("./models/colNames.pkl", "rb"))
 def home():
   return render_template('home.html')
 
-@app.route('/predict', methods = ['GET', 'POST'])
+@app.route('/predict', methods = [ 'POST'])
 def data():
     if request.method == 'POST':
         f = request.form['csvfile']
