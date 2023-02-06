@@ -21,13 +21,13 @@ def data():
     if request.method == 'POST':
         f = request.form['csvfile']
         with open(f) as file:
-            input = pd.read_csv(file)    
+            df = pd.read_csv(file)    
 
         # preprocessing the input 
-        input.drop(dropCols,axis=1,inplace=True)
-        input = input[impCols]
+        df.drop(dropCols,axis=1,inplace=True)
+        df = df[impCols]
 
-        input = pd.DataFrame(np.log1p(input),columns=colNames)
+        input = pd.DataFrame(np.log1p(df),columns=impCols)
 
         # predicting the output
         y_hat = regmodel.predict(input)
